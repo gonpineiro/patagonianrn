@@ -14,7 +14,8 @@ import { StyleSheet, Text, View } from 'react-native';
 const App = () => {
   return (
     <View style={styles.mainContainer}>
-      <Text>Texto</Text>
+      <Text style={styles.title}>Texto</Text>
+      <Text>Subtitulo</Text>
     </View>
   );
 };
@@ -22,10 +23,17 @@ const App = () => {
 const styles = StyleSheet.create({
   mainContainer: {
     alignItems: 'center',
-    backgroundColor: 'blue',
+    backgroundColor: '#ABCDEF',
     flex: 1,
     justifyContent: 'center',
     width: '100%',
+  },
+  title: {
+    color: 'coral',
+    fontSize: 50,
+    fontWeight: 'bold',
+    fontStyle: 'italic',
+    marginBottom: 10,
   },
 });
 
