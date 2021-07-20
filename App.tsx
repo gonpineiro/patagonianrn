@@ -20,8 +20,8 @@ const App = () => {
 
   return (
     <View style={styles.mainContainer}>
-      <Text style={styles.title}>Texto</Text>
-      <Text>Subtitulo</Text>
+      <Text style={styles.title}>Hola Mundo!!</Text>
+      <Text style={styles.subtitle}>https://academy.patagonian.it/</Text>
       <Image
         source={{ uri: 'https://reactnative.dev/img/tiny_logo.png' }}
         style={styles.image}
@@ -36,7 +36,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: colors.veryLightBlue,
     flex: 1,
-    justifyContent: 'center',
     width: '100%',
   },
   title: {
@@ -44,11 +43,17 @@ const styles = StyleSheet.create({
     fontSize: 50,
     fontWeight: 'bold',
     fontStyle: 'italic',
-    marginBottom: 10,
+    marginTop: 100,
+    marginBottom: 100,
   },
   image: {
     minHeight: 100,
     width: DEVICE_WIDTH * 0.5,
+    marginTop: 100,
+  },
+  subtitle: {
+    color: 'white',
+    fontSize: 25,
   },
 });
 
