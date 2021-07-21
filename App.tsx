@@ -17,7 +17,6 @@ import { DEVICE_HEIGHT, DEVICE_WIDTH } from './src/utils/dimensions';
 const App = () => {
   console.log('DEVICE_HEIGHT', DEVICE_HEIGHT);
   console.log('DEVICE_WIDTH', DEVICE_WIDTH);
-
   return (
     <View style={styles.mainContainer}>
       <Text style={styles.title}>Hola Mundo!!</Text>
