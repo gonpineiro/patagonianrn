@@ -9,7 +9,7 @@
  */
 
 import React from 'react';
-import { Image, StyleSheet, Text, View } from 'react-native';
+import { Button, Image, StyleSheet, Text, View } from 'react-native';
 
 import { colors } from './src/utils/theme';
 import { DEVICE_HEIGHT, DEVICE_WIDTH } from './src/utils/dimensions';
@@ -26,6 +26,7 @@ const App = () => {
         style={styles.image}
         resizeMode="contain"
       />
+      <Button title={'Hola'} onPress={() => console.log('Hola')} />
     </View>
   );
 };
