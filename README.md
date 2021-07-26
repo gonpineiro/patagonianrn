@@ -1,9 +1,9 @@
 <b>[StyleSheet.create](https://reactnative.dev/docs/stylesheet)</b> : Calcula una sola vez las medidas en pixeles y lo deja estático
 
-
 ```javascript
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({});
 ```
+
 <hr>
 
 <b>defaultProps</b> : Define propiedades por defecto </br>
@@ -14,38 +14,47 @@ DefaultButton.defaultProps = {
   msg: 'Press me',
 };
 ```
+
 <hr>
 
 <b>[ViewStyle](https://reactnative.dev/docs/view-style-props)</b> : Propieades del estilos de las views </br>
-
 
 ```typescript
 interface Props {
   additionalStyle?: ViewStyle;
 }
 ```
+
 <hr>
 
 #### [Husky](https://typicode.github.io/husky/#/)
 
-1) Install 
+1. Install
 
 ```console
   npm install husky@3.0.9 --save-dev
+  npm install -D lint-staged
 ```
 
-2) Agregar el siguente comandos
+2. Agregar el siguente comandos
 
 ```console
 "check-ts": "tsc --watch --noEmit --skipLibCheck"
 ```
-3) Agregamos el siguente objeto dentro del package.json
+
+3. Agregamos el siguente objeto dentro del package.json
 
 ```json
 "husky": {
     "hooks": {
       "pre-commit": "tsc --noEmit --skipLibCheck && lint-staged"
     }
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,json}": [
+      "prettier \"src/**/*.{js,jsx,json,tsx,ts}\" --write",
+      "eslint '*/**/*.{js,ts,tsx}' --quiet --fix"
+    ]
   },
 ```
 
