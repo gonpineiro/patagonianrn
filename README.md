@@ -1,4 +1,28 @@
+<hr>
 <b>StyleSheet.create</b> : Calcula una sola vez las medidas en pixeles y lo deja estático
+https://reactnative.dev/docs/stylesheet
+
+```javascript
+const styles = StyleSheet.create({})
+```
+<hr>
+<b>defaultProps</b> : Define propiedades por defecto </br>
+
+```javascript
+DefaultButton.defaultProps = {
+  additionalStyle: {},
+  msg: 'Press me',
+};
+```
+<hr>
+<b>ViewStyle</b> : Propieades del estilos de las views </br>
+https://reactnative.dev/docs/view-style-props
+
+```typescript
+interface Props {
+  additionalStyle?: ViewStyle;
+}
+```
 
 <hr>
 #### Buenas practicas

@@ -7,7 +7,7 @@ import { colors } from './src/utils/theme';
 import { DEVICE_WIDTH } from './src/utils/dimensions';
 
 const showAlert = () => {
-  Alert.alert('Hola !!!');
+  Alert.alert('Hola');
 };
 
 const App = () => {
@@ -20,7 +20,13 @@ const App = () => {
         style={styles.image}
         resizeMode="contain"
       />
-      <DefaultButton onPress={showAlert} msg={'Hola'} />
+      <DefaultButton
+        //additionalStyle={styles.button}
+        color={colors.mainOrange}
+        onPress={showAlert}
+        msg={'hola'}
+        textSize={30}
+      />
     </View>
   );
 };
@@ -48,6 +54,10 @@ const styles = StyleSheet.create({
   subtitle: {
     color: 'white',
     fontSize: 25,
+  },
+  button: {
+    backgroundColor: 'green',
+    width: 50,
   },
 });
 
