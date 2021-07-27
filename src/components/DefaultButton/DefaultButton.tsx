@@ -12,15 +12,26 @@ interface Props {
   textSize: number;
   variant?: 'primary' | 'secondary';
 }
-/* Primary: backgroundColor oratnte text white */
+/* Primary: backgroundColor orange text white */
 /* Primary: backgroundColor white text orange */
-const DefaultButton = ({ additionalStyle, color, onPress, msg, textSize, variant }: Props) => {
+const DefaultButton = ({ additionalStyle, onPress, msg, textSize, variant }: Props) => {
   return (
     <TouchableOpacity
       onPress={onPress}
-      style={[styles.mainContainer, additionalStyle, { backgroundColor: color }]}
+      style={[
+        styles.mainContainer,
+        additionalStyle,
+        { backgroundColor: variant === 'primary' ? colors.mainOrange : colors.mainWhite },
+      ]}
     >
-      <Text style={{ fontSize: textSize }}>{msg + variant}</Text>
+      <Text
+        style={{
+          fontSize: textSize,
+          color: variant === 'primary' ? colors.mainWhite : colors.mainOrange,
+        }}
+      >
+        {msg}
+      </Text>
     </TouchableOpacity>
   );
 };

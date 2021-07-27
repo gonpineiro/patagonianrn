@@ -22,10 +22,11 @@ const App = () => {
       />
       <DefaultButton
         //additionalStyle={styles.button}
-        color={colors.mainOrange}
+        color={colors.veryLightBlue}
         onPress={showAlert}
-        msg={'hola'}
+        msg={'Hola !!!!'}
         textSize={30}
+        variant="primary"
       />
     </View>
   );
