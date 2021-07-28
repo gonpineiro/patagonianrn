@@ -25,4 +25,12 @@ const DefaultButton = ({ additionalStyle, onPress, msg, textSize, variant = 'pri
   );
 };
 
+DefaultButton.defaultProps = {
+  additionalStyle: {},
+  color: colors.mainOrange,
+  msg: 'Press me',
+  textSize: 18,
+  variant: 'primary',
+};
+
 export default DefaultButton;

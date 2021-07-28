@@ -1,5 +1,5 @@
 import React from 'react';
-import { Alert, Image, StyleSheet, Text, View } from 'react-native';
+import { Alert, Image, Modal, StyleSheet, Text, View } from 'react-native';
 
 import { DefaultButton } from './src/components';
 
@@ -20,13 +20,33 @@ const App = () => {
         style={styles.image}
         resizeMode="contain"
       />
-      <DefaultButton
-        //additionalStyle={styles.button}
-        onPress={showAlert}
-        msg={'Holaa !!!!'}
-        textSize={30}
-        variant="primary"
-      />
+      <DefaultButton onPress={showAlert} msg={'Holaa !!!!'} textSize={30} variant="primary" />
+      <Modal animationType="fade" transparent visible={true}>
+        <View
+          style={{
+            alignItems: 'center',
+            backgroundColor: 'rgba(0, 0, 0, 0.2)',
+            flex: 1,
+            justifyContent: 'center',
+            width: '100%',
+          }}
+        >
+          <View
+            style={{
+              alignItems: 'center',
+              backgroundColor: colors.white,
+              borderRadius: 13,
+              justifyContent: 'center',
+              paddingBottom: 20,
+              paddingTop: 10,
+              width: '65%',
+            }}
+          >
+            <Text style={{ marginVertical: 20 }}>Hola, esto es un Modal!</Text>
+            <DefaultButton onPress={() => {}} msg={'Ok'} additionalStyle={{ height: 40 }} />
+          </View>
+        </View>
+      </Modal>
     </View>
   );
 };
