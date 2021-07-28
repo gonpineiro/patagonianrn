@@ -13,7 +13,7 @@ interface Props {
   variant?: 'primary' | 'secondary';
 }
 /* Primary: backgroundColor orange text white */
-/* Primary: backgroundColor white text orange */
+/* Secondary: backgroundColor white text orange */
 const DefaultButton = ({ additionalStyle, onPress, msg, textSize, variant }: Props) => {
   return (
     <TouchableOpacity
