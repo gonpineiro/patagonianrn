@@ -24,7 +24,7 @@ const App = () => {
         //additionalStyle={styles.button}
         color={colors.veryLightBlue}
         onPress={showAlert}
-        msg={'Hola !!!!'}
+        msg={'Holaa !!!!'}
         textSize={30}
         variant="primary"
       />

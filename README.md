@@ -32,8 +32,8 @@ interface Props {
 1. Install
 
 ```console
-  npm install husky@3.0.9 --save-dev
-  npm install -D lint-staged
+  npm install husky@3.0.9 
+  npm install lint-staged --save-dev
 ```
 
 2. Agregar el siguente comandos
