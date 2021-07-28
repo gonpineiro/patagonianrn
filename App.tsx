@@ -1,14 +1,10 @@
 import React, { useState } from 'react';
-import { Alert, Image, Modal, StyleSheet, Text, View } from 'react-native';
+import { Image, Modal, StyleSheet, Text, View } from 'react-native';
 
 import { DefaultButton } from './src/components';
 
 import { colors } from './src/utils/theme';
 import { DEVICE_WIDTH } from './src/utils/dimensions';
-
-const showAlert = () => {
-  Alert.alert('Hola');
-};
 
 const App = () => {
   const [isModalVisible, setModalVisible] = useState(false);
