@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Alert, Image, Modal, StyleSheet, Text, View } from 'react-native';
 
 import { DefaultButton } from './src/components';
@@ -11,6 +11,16 @@ const showAlert = () => {
 };
 
 const App = () => {
+  const [isModalVisible, setModalVisible] = useState(false);
+
+  const showModal = () => {
+    setModalVisible(true);
+  };
+
+  const hideModal = () => {
+    setModalVisible(false);
+  };
+
   return (
     <View style={styles.mainContainer}>
       <Text style={styles.title}>Hola Mundo!!</Text>
@@ -20,8 +30,8 @@ const App = () => {
         style={styles.image}
         resizeMode="contain"
       />
-      <DefaultButton onPress={showAlert} msg={'Holaa !!!!'} textSize={30} variant="primary" />
-      <Modal animationType="fade" transparent visible={true}>
+      <DefaultButton onPress={showModal} msg={'Mostrar Modal'} textSize={30} variant="secondary" />
+      <Modal animationType="fade" transparent visible={isModalVisible}>
         <View
           style={{
             alignItems: 'center',
@@ -43,7 +53,7 @@ const App = () => {
             }}
           >
             <Text style={{ marginVertical: 20 }}>Hola, esto es un Modal!</Text>
-            <DefaultButton onPress={() => {}} msg={'Ok'} additionalStyle={{ height: 40 }} />
+            <DefaultButton onPress={hideModal} msg={'Ok'} additionalStyle={{ height: 40 }} />
           </View>
         </View>
       </Modal>
