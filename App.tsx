@@ -22,7 +22,6 @@ const App = () => {
       />
       <DefaultButton
         //additionalStyle={styles.button}
-        color={colors.veryLightBlue}
         onPress={showAlert}
         msg={'Holaa !!!!'}
         textSize={30}
