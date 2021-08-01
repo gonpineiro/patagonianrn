@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { Image, Modal, StyleSheet, Text, View } from 'react-native';
+import { Image, StyleSheet, Text, View } from 'react-native';
 
-import { DefaultButton } from './src/components';
+import { DefaultButton, DefaultModal } from './src/components';
 
 import { colors } from './src/utils/theme';
 import { DEVICE_WIDTH } from './src/utils/dimensions';
@@ -28,32 +28,7 @@ const App = () => {
         resizeMode="contain"
       />
       <DefaultButton onPress={showModal} msg={'Mostrar Modal'} textSize={30} variant="secondary" />
-      <Modal animationType="fade" transparent visible={isModalVisible}>
-        <View
-          style={{
-            alignItems: 'center',
-            backgroundColor: 'rgba(0, 0, 0, 0.2)',
-            flex: 1,
-            justifyContent: 'center',
-            width: '100%',
-          }}
-        >
-          <View
-            style={{
-              alignItems: 'center',
-              backgroundColor: colors.white,
-              borderRadius: 13,
-              justifyContent: 'center',
-              paddingBottom: 20,
-              paddingTop: 10,
-              width: '65%',
-            }}
-          >
-            <Text style={{ marginVertical: 20 }}>Hola, esto es un Modal!</Text>
-            <DefaultButton onPress={hideModal} msg={'Ok'} additionalStyle={{ height: 40 }} />
-          </View>
-        </View>
-      </Modal>
+      <DefaultModal isModalVisible={isModalVisible} hideModal={hideModal} />
     </View>
   );
 };
