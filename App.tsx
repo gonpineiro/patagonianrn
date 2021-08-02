@@ -27,8 +27,13 @@ const App = () => {
         style={styles.image}
         resizeMode="contain"
       />
-      <DefaultButton onPress={showModal} msg={'Mostrar Modal'} textSize={30} variant="secondary" />
-      <DefaultModal isModalVisible={isModalVisible} hideModal={hideModal} />
+      <DefaultButton onPress={showModal} text={'Mostrar Modal'} textSize={30} variant="secondary" />
+      <DefaultModal
+        visible={isModalVisible}
+        onPressButton={hideModal}
+        title={'Esto es un modal'}
+        description={'Ok!'}
+      />
     </View>
   );
 };

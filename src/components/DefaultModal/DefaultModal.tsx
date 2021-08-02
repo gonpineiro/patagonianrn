@@ -1,22 +1,30 @@
 import React from 'react';
 import { Modal, Text, View } from 'react-native';
 
-import { DefaultButton } from '../index';
+import DefaultButton from '../DefaultButton';
 
 import styles from './styles';
 
 interface Props {
-  isModalVisible: boolean;
-  hideModal: () => void;
+  visible: boolean;
+  onPressButton: () => void;
+  title: string;
+  description: string;
 }
 
-const DefaultModal = ({ isModalVisible, hideModal }: Props) => {
+/* Agrear variantes con un diccionario */
+
+const DefaultModal = ({ visible, onPressButton, title, description }: Props) => {
   return (
-    <Modal animationType="fade" transparent visible={isModalVisible}>
+    <Modal animationType="fade" transparent visible={visible}>
       <View style={styles.mainContainer}>
         <View style={styles.viewContainer}>
-          <Text style={styles.text}>Hola, esto es un Modal!</Text>
-          <DefaultButton onPress={hideModal} msg={'Ok'} additionalStyle={styles.button} />
+          <Text style={styles.text}>{title}</Text>
+          <DefaultButton
+            onPress={onPressButton}
+            text={description}
+            additionalStyle={styles.button}
+          />
         </View>
       </View>
     </Modal>
