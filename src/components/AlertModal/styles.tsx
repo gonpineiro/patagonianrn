@@ -9,7 +9,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     width: '100%',
   },
-  viewContainer: {
+  innerAlert: {
     alignItems: 'center',
     backgroundColor: colors.white,
     borderRadius: 13,
