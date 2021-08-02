@@ -17,7 +17,6 @@ const App = () => {
     setModalVisible(false);
   };
 
-  /* Tarea: Hacer que el modal se transforme en un compoente custom */
   return (
     <View style={styles.mainContainer}>
       <Text style={styles.title}>Hola Mundo!!</Text>

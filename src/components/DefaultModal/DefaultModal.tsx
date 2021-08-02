@@ -13,6 +13,7 @@ interface Props {
 }
 
 /* Agrear variantes con un diccionario */
+/* Perfeccionar un titulo y una descripcion */
 
 const DefaultModal = ({ visible, onPressButton, title, description }: Props) => {
   return (
