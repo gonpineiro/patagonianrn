@@ -28,10 +28,12 @@ const App = () => {
       />
       <DefaultButton onPress={showModal} text={'Mostrar Modal'} textSize={30} variant="secondary" />
       <AlertModal
-        visible={isModalVisible}
-        onPressPrimaryButton={hideModal}
-        title={'Esto es un modal'}
+        message={'Esto es un modal'}
         primaryButtonText={'Ok!'}
+        secondaryButtonText={'Cancel!'}
+        onPressPrimaryButton={hideModal}
+        onPressSecondaryButton={hideModal}
+        visible={isModalVisible}
       />
     </View>
   );

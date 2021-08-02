@@ -6,30 +6,51 @@ import DefaultButton from '../DefaultButton';
 import styles from './styles';
 
 interface Props {
-  visible: boolean;
+  message: string;
   onPressPrimaryButton: () => void;
-  title: string;
+  onPressSecondaryButton?: () => void;
   primaryButtonText: string;
+  secondaryButtonText?: string;
+  visible: boolean;
 }
 
 /* Agrear variantes con un diccionario */
 /* Perfeccionar un titulo y una descripcion */
 
-const DefaultModal = ({ visible, onPressPrimaryButton, title, primaryButtonText }: Props) => {
+const AlertModal = ({
+  visible,
+  onPressPrimaryButton,
+  onPressSecondaryButton,
+  secondaryButtonText,
+  message,
+  primaryButtonText,
+}: Props) => {
   return (
     <Modal animationType="fade" transparent visible={visible}>
       <View style={styles.mainContainer}>
         <View style={styles.innerAlert}>
-          <Text style={styles.text}>{title}</Text>
+          <Text style={styles.text}>{message}</Text>
           <DefaultButton
+            additionalStyle={styles.button}
             onPress={onPressPrimaryButton}
             text={primaryButtonText}
-            additionalStyle={styles.button}
           />
+          {secondaryButtonText && onPressSecondaryButton ? (
+            <DefaultButton
+              additionalStyle={styles.button}
+              onPress={onPressSecondaryButton}
+              text={secondaryButtonText}
+              variant="secondary"
+            />
+          ) : null}
         </View>
       </View>
     </Modal>
   );
 };
 
-export default DefaultModal;
+AlertModal.defaultProps = {
+  onPressSecondaryButton: null,
+  secondaryButtonText: '',
+};
+export default AlertModal;
