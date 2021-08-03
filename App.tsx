@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Image, StyleSheet, Text, View } from 'react-native';
 
-import { DefaultButton, AlertModal } from './src/components';
+import { DefaultButton, AlertModal, Typography } from './src/components';
 
 import { colors } from './src/utils/theme';
 import { DEVICE_WIDTH } from './src/utils/dimensions';
@@ -21,6 +21,7 @@ const App = () => {
     <View style={styles.mainContainer}>
       <Text style={styles.title}>Hola Mundo!!</Text>
       <Text style={styles.subtitle}>https://academy.patagonian.it/</Text>
+      <Typography>{'asdasd'}</Typography>
       <Image
         source={{ uri: 'https://reactnative.dev/img/tiny_logo.png' }}
         style={styles.image}
