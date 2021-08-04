@@ -47,6 +47,7 @@ const styles = StyleSheet.create({
   mainContainer: {
     alignItems: 'center',
     backgroundColor: colors.veryLightBlue,
+    paddingTop: 100,
     flex: 1,
     width: '100%',
   },
