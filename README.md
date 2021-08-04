@@ -32,7 +32,7 @@ interface Props {
 1. Install
 
 ```console
-  npm install husky@3.0.9 
+  npm install husky@3.0.9
   npm install lint-staged --save-dev
 ```
 
@@ -59,6 +59,12 @@ interface Props {
 ```
 
 <hr>
+
+### vincular assets
+
+```console
+  npx react-native link
+```
 
 #### Buenas practicas
 
