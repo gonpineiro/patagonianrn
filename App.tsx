@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Image, StyleSheet, Text, View } from 'react-native';
+import { Image, StyleSheet, View } from 'react-native';
 
 import { DefaultButton, AlertModal, Typography } from './src/components';
 
@@ -19,9 +19,12 @@ const App = () => {
 
   return (
     <View style={styles.mainContainer}>
-      <Text style={styles.title}>Hola Mundo!!</Text>
-      <Text style={styles.subtitle}>https://academy.patagonian.it/</Text>
-      <Typography>{'asdasd'}</Typography>
+      <Typography align="center" size={50} color={colors.mainOrange}>
+        Hola Mundo!!
+      </Typography>
+      <Typography align="center" size={25} color={'white'}>
+        https://academy.patagonian.it/
+      </Typography>
       <Image
         source={{ uri: 'https://reactnative.dev/img/tiny_logo.png' }}
         style={styles.image}

@@ -1,6 +1,7 @@
 import React from 'react';
-import { Text, TouchableOpacity, ViewStyle } from 'react-native';
+import { TouchableOpacity, ViewStyle } from 'react-native';
 import { colors } from '../../utils/theme';
+import Typography from '../Typography';
 
 import styles, { buttonTextColors } from './styles';
 
@@ -24,9 +25,9 @@ const DefaultButton = ({
       onPress={onPress}
       style={[styles.mainContainer, styles[variant], additionalStyle]}
     >
-      <Text style={{ fontSize: textSize, color: buttonTextColors[variant] || colors.white }}>
+      <Typography color={buttonTextColors[variant] || colors.white} size={textSize}>
         {text}
-      </Text>
+      </Typography>
     </TouchableOpacity>
   );
 };
