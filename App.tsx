@@ -19,10 +19,10 @@ const App = () => {
 
   return (
     <View style={styles.mainContainer}>
-      <Typography align="center" size={50} color={colors.mainOrange}>
+      <Typography align="center" size={50} color={colors.mainOrange} variant={'bold'}>
         Hola Mundo!!
       </Typography>
-      <Typography align="center" size={25} color={'white'}>
+      <Typography align="center" size={25} color={'white'} variant={'medium'}>
         https://academy.patagonian.it/
       </Typography>
       <Image
