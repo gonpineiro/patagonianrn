@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Image, StyleSheet, View } from 'react-native';
+import { Image, SafeAreaView, ScrollView, StyleSheet, View } from 'react-native';
 
 import { DefaultButton, AlertModal, Typography } from './src/components';
 
@@ -18,28 +18,68 @@ const App = () => {
   };
 
   return (
-    <View style={styles.mainContainer}>
-      <Typography align="center" size={50} color={colors.mainOrange} variant={'bold'}>
-        Hola Mundo!!
-      </Typography>
-      <Typography align="center" size={25} color={'white'} variant={'medium'}>
-        https://academy.patagonian.it/
-      </Typography>
-      <Image
-        source={{ uri: 'https://reactnative.dev/img/tiny_logo.png' }}
-        style={styles.image}
-        resizeMode="contain"
-      />
-      <DefaultButton onPress={showModal} text={'Mostrar Modal'} textSize={30} variant="secondary" />
-      <AlertModal
-        message={'Esto es un modal'}
-        primaryButtonText={'Ok!'}
-        secondaryButtonText={'Cancel!'}
-        onPressPrimaryButton={hideModal}
-        onPressSecondaryButton={hideModal}
-        visible={isModalVisible}
-      />
-    </View>
+    <>
+      <SafeAreaView style={{ backgroundColor: colors.veryLightBlue }} />
+      <ScrollView style={{ backgroundColor: colors.veryLightBlue, flex: 1, width: '100%' }}>
+        <View style={styles.mainContainer}>
+          <Typography align="center" size={50} color={colors.mainOrange} variant={'bold'}>
+            Hola Mundo!!
+          </Typography>
+          <Typography align="center" size={25} color={'white'} variant={'medium'}>
+            https://academy.patagonian.it/
+          </Typography>
+          <Image
+            source={{ uri: 'https://reactnative.dev/img/tiny_logo.png' }}
+            style={styles.image}
+            resizeMode="contain"
+          />
+          <Image
+            source={{ uri: 'https://reactnative.dev/img/tiny_logo.png' }}
+            style={styles.image}
+            resizeMode="contain"
+          />
+          <Image
+            source={{ uri: 'https://reactnative.dev/img/tiny_logo.png' }}
+            style={styles.image}
+            resizeMode="contain"
+          />
+          <Image
+            source={{ uri: 'https://reactnative.dev/img/tiny_logo.png' }}
+            style={styles.image}
+            resizeMode="contain"
+          />
+          <Image
+            source={{ uri: 'https://reactnative.dev/img/tiny_logo.png' }}
+            style={styles.image}
+            resizeMode="contain"
+          />
+          <Image
+            source={{ uri: 'https://reactnative.dev/img/tiny_logo.png' }}
+            style={styles.image}
+            resizeMode="contain"
+          />
+          <Image
+            source={{ uri: 'https://reactnative.dev/img/tiny_logo.png' }}
+            style={styles.image}
+            resizeMode="contain"
+          />
+          <DefaultButton
+            onPress={showModal}
+            text={'Mostrar Modal'}
+            textSize={30}
+            variant="secondary"
+          />
+          <AlertModal
+            message={'Esto es un modal'}
+            primaryButtonText={'Ok!'}
+            secondaryButtonText={'Cancel!'}
+            onPressPrimaryButton={hideModal}
+            onPressSecondaryButton={hideModal}
+            visible={isModalVisible}
+          />
+        </View>
+      </ScrollView>
+    </>
   );
 };
 
@@ -47,8 +87,10 @@ const styles = StyleSheet.create({
   mainContainer: {
     alignItems: 'center',
     backgroundColor: colors.veryLightBlue,
-    paddingTop: 100,
     flex: 1,
+    justifyContent: 'center',
+    paddingTop: 100,
+    paddingBottom: 30,
     width: '100%',
   },
   title: {
