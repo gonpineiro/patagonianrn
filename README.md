@@ -66,6 +66,24 @@ interface Props {
   npx react-native link
 ```
 
+
+### react navigation
+Install `npm install @react-navigation/native`
+Install `npm install react-native-screens react-native-safe-area-context`
+
+En `android/app/src/main/java/com/<project>/MainActivity.java` agregar
+
+```java 
+import android.os.Bundle;
+/* */
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+  super.onCreate(null);
+}
+```
+
+Install `npm install @react-navigation/native-stack`
+
 #### Buenas practicas
 
 <b>Booleanos:</b>
