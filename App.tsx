@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Image, SafeAreaView, ScrollView, StyleSheet, View } from 'react-native';
 
-import { DefaultButton, AlertModal, Typography } from './src/components';
+import { DefaultButton, AlertModal, Typography, Separator } from './src/components';
 
 import { colors } from './src/utils/theme';
 import { DEVICE_WIDTH } from './src/utils/dimensions';
@@ -33,6 +33,7 @@ const App = () => {
             style={styles.image}
             resizeMode="contain"
           />
+          <Separator width={50} />
           <Image
             source={{ uri: 'https://reactnative.dev/img/tiny_logo.png' }}
             style={styles.image}
@@ -104,7 +105,6 @@ const styles = StyleSheet.create({
   image: {
     minHeight: 100,
     width: DEVICE_WIDTH * 0.5,
-    marginTop: 100,
   },
   subtitle: {
     color: 'white',
