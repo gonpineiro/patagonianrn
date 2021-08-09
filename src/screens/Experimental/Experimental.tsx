@@ -18,8 +18,8 @@ const ExperimentalScreen = () => {
 
   return (
     <>
-      <SafeAreaView style={{ backgroundColor: colors.veryLightBlue }} />
-      <ScrollView style={{ backgroundColor: colors.veryLightBlue, flex: 1, width: '100%' }}>
+      <SafeAreaView style={styles.safeArea} />
+      <ScrollView style={styles.ScrollView}>
         <View style={styles.mainContainer}>
           <Typography align="center" size={50} color={colors.mainOrange} variant={'bold'}>
             Hola Mundo!!

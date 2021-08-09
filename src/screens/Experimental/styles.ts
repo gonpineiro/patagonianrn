@@ -24,6 +24,14 @@ const styles = StyleSheet.create({
     minHeight: 100,
     width: DEVICE_WIDTH * 0.5,
   },
+  safeArea: {
+    backgroundColor: colors.veryLightBlue,
+  },
+  ScrollView: {
+    backgroundColor: colors.veryLightBlue,
+    flex: 1,
+    width: '100%',
+  },
   subtitle: {
     color: 'white',
     fontSize: 25,
