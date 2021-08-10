@@ -27,45 +27,16 @@ const ExperimentalScreen = () => {
           <Typography align="center" size={25} color={'white'} variant={'medium'}>
             https://academy.patagonian.it/
           </Typography>
-          <Image
-            source={{ uri: 'https://reactnative.dev/img/tiny_logo.png' }}
-            style={styles.image}
-            resizeMode="contain"
-          />
           <Separator width={50} />
           <Image
             source={{ uri: 'https://reactnative.dev/img/tiny_logo.png' }}
             style={styles.image}
             resizeMode="contain"
           />
-          <Image
-            source={{ uri: 'https://reactnative.dev/img/tiny_logo.png' }}
-            style={styles.image}
-            resizeMode="contain"
-          />
-          <Image
-            source={{ uri: 'https://reactnative.dev/img/tiny_logo.png' }}
-            style={styles.image}
-            resizeMode="contain"
-          />
-          <Image
-            source={{ uri: 'https://reactnative.dev/img/tiny_logo.png' }}
-            style={styles.image}
-            resizeMode="contain"
-          />
-          <Image
-            source={{ uri: 'https://reactnative.dev/img/tiny_logo.png' }}
-            style={styles.image}
-            resizeMode="contain"
-          />
-          <Image
-            source={{ uri: 'https://reactnative.dev/img/tiny_logo.png' }}
-            style={styles.image}
-            resizeMode="contain"
-          />
+          <Separator width={50} />
           <DefaultButton
             onPress={showModal}
-            text={'Mostrar Modal'}
+            text={'Show Modal'}
             textSize={30}
             variant="secondary"
           />
