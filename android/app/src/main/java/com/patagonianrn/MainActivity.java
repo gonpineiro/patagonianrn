@@ -13,9 +13,10 @@ public class MainActivity extends ReactActivity {
   protected String getMainComponentName() {
     return "patagonianrn";
   }
-}
-
-@Override
-protected void onCreate(Bundle savedInstanceState) {
+  @Override
+  protected void onCreate(Bundle savedInstanceState) {
   super.onCreate(null);
 }
+}
+
+
