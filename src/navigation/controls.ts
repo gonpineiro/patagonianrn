@@ -23,3 +23,14 @@ export function replaceRoute(name: string, params: object = {}) {
     navigationRef.dispatch(StackActions.replace(name, params));
   }
 }
+
+export function resetNavigation() {
+  if (navigationRef.isReady()) {
+    navigationRef.dispatch(
+      CommonActions.reset({
+        index: 0,
+        routes: [{ name: 'AuthStack' }],
+      }),
+    );
+  }
+}
