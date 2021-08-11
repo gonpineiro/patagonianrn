@@ -1,5 +1,4 @@
 import React from 'react';
-
 const { createBottomTabNavigator } = require('@react-navigation/bottom-tabs');
 
 import { HomeScreen, HistoryScreen } from '../screens';
