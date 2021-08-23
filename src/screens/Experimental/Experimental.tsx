@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { Image, SafeAreaView, ScrollView, View } from 'react-native';
+import MaterialIcon from 'react-native-vector-icons/MaterialIcons';
+
 import { colors } from '../../utils/theme';
 import styles from './styles';
 
@@ -28,6 +30,7 @@ const ExperimentalScreen = () => {
             https://academy.patagonian.it/
           </Typography>
           <Separator width={50} />
+          <MaterialIcon name="search" size={50} color="#fff" />
           <Image
             source={{ uri: 'https://reactnative.dev/img/tiny_logo.png' }}
             style={styles.image}

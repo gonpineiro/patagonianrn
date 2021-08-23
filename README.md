@@ -86,8 +86,20 @@ Install `npm install @react-navigation/native-stack`
 
 ### React Native Vector Icons
 
-npm install --save react-native-vector-icons
-npm install --save-dev @types/react-native-vector-icons
+```
+  npm install --save react-native-vector-icons
+  npm install --save-dev @types/react-native-vector-icons
+```
+
+Se debe agregar el siguente codigo dentro de `android\app\build.grandle`
+
+```
+project.ext.vectoricons = [
+    iconFontNames: [ 'MaterialIcons.ttf', 'EvilIcons.ttf' ] // Name of the font files you want to copy
+]
+
+apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
+```
 
 #### Buenas practicas
 
