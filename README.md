@@ -84,6 +84,11 @@ protected void onCreate(Bundle savedInstanceState) {
 
 Install `npm install @react-navigation/native-stack`
 
+### React Native Vector Icons
+
+npm install --save react-native-vector-icons
+npm install --save-dev @types/react-native-vector-icons
+
 #### Buenas practicas
 
 <b>Booleanos:</b>
