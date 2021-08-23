@@ -4,9 +4,8 @@ import { View } from 'react-native';
 import { DefaultButton, Separator, Typography } from '../../components';
 import styles from './styles';
 
-import { resetNavigation } from '../../navigation/controls';
+import { goToScreen, resetNavigation } from '../../navigation/controls';
 
-// @ts-ignore
 const HistoryScreen = () => {
   return (
     <View style={styles.mainContainer}>
@@ -14,7 +13,9 @@ const HistoryScreen = () => {
         HistoryScreen !!!!
       </Typography>
       <Separator width={50} />
-      <DefaultButton text="Log Out" onPress={resetNavigation} />
+      <DefaultButton text="Go To Experimental Screen" onPress={() => goToScreen('Experimental')} />
+      <Separator width={50} color={'black'} />
+      <DefaultButton text="Log Out" variant="secondary" onPress={resetNavigation} />
     </View>
   );
 };
