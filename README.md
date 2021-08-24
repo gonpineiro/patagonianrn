@@ -101,6 +101,27 @@ project.ext.vectoricons = [
 apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
 ```
 
+### React Native Vector Icons
+
+```
+  npm install react-native-config
+```
+
+Agregar en la segunda linea el siguente codigo en `android/app/build.gradle`
+
+```
+  apply from: project(':react-native-config').projectDir.getPath() + "/dotenv.gradle"
+```
+
+y
+
+```gradle
+defaultConfig {
+    ...
+    resValue "string", "build_config_package", "YOUR_PACKAGE_NAME_IN_ANDROIDMANIFEST_XML"
+}
+```
+
 #### Buenas practicas
 
 <b>Booleanos:</b>
