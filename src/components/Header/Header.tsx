@@ -1,6 +1,7 @@
 import React from 'react';
 import { TouchableOpacity, View } from 'react-native';
 import MaterialIcon from 'react-native-vector-icons/MaterialIcons';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 import Separator from '../Separator';
 import Typography from '../Typography';
@@ -8,7 +9,6 @@ import styles from './styles';
 import { colors } from '../../utils/theme';
 
 import { goBack } from '../../navigation/controls';
-import { SafeAreaView } from 'react-native-safe-area-context';
 
 interface Props {
   onPressBackButton?: () => void;
@@ -27,17 +27,17 @@ const Header = ({
 }: Props) => {
   return (
     <>
-      <SafeAreaView />
+      <SafeAreaView edges={['top']} />
       <View style={styles.mainContainer}>
         {showBackButton ? (
           <TouchableOpacity onPress={onPressBackButton} style={styles.sideButtonContainer}>
             <MaterialIcon name="navigate-before" size={35} color={colors.black} />
           </TouchableOpacity>
         ) : (
-          <Separator size={40} />
+          <Separator isHorizontal size={40} />
         )}
         <View style={styles.titleContainer}>
-          <Typography variant="bold" size={17}>
+          <Typography align="center" numberOfLines={2} variant="bold" size={17}>
             {title}
           </Typography>
         </View>
@@ -46,7 +46,7 @@ const Header = ({
             <RightSideComponent />
           </TouchableOpacity>
         ) : (
-          <Separator size={40} />
+          <Separator isHorizontal size={40} />
         )}
       </View>
     </>
