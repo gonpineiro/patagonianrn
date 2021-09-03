@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { ActivityIndicator, Alert, FlatList, View } from 'react-native';
+import { ActivityIndicator, Alert, FlatList, TouchableOpacity, View } from 'react-native';
 import { useNetInfo } from '@react-native-community/netinfo';
 
 import { DefaultButton, Header, Separator, Typography } from '../../components';
@@ -13,18 +13,28 @@ const goToExperimentalScreen = () => {
   goToScreen('Experimental');
 };
 
-const ListItem = ({ title }: { title: string }) => (
-  <View style={styles.listItemContainer}>
-    <Typography>{title}</Typography>
-  </View>
+const ListItem = ({ id, title }: { id: number; title: string }) => (
+  <TouchableOpacity
+    onPress={() => goToScreen('BookDetails', { id, title })}
+    style={styles.listItemContainerShadow}
+  >
+    <View style={styles.listItemContainer}>
+      <Typography numberOfLines={2} align="center">
+        {title}
+      </Typography>
+    </View>
+  </TouchableOpacity>
 );
 
-// @ts-ignore
-const renderFlatlistItem = ({ item }) => <ListItem title={item.title} />;
+const flatlistKeyExtractor = (item: Book) => `${item.id}`;
+
+const renderFlatlistItem = ({ item }: { item: Book }) => (
+  <ListItem id={item.id} title={item.title} />
+);
 
 const HomeScreen = () => {
-  const [books, setBooks] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [books, setBooks] = useState<Book[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
 
   const netInfo = useNetInfo();
 
@@ -76,10 +86,13 @@ const HomeScreen = () => {
         <DefaultButton text="Go To Experimental Screen" onPress={goToExperimentalScreen} />
         <Separator size={20} />
         <FlatList
+          keyExtractor={flatlistKeyExtractor}
           refreshing={loading}
           onRefresh={getBooksData}
           data={books}
           renderItem={renderFlatlistItem}
+          ItemSeparatorComponent={Separator}
+          contentContainerStyle={styles.flatlistContent}
           style={styles.flatList}
         />
       </View>

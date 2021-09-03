@@ -1,18 +1,19 @@
 import React, { ReactNode } from 'react';
 import { Text } from 'react-native';
-import { IS_IOS } from '../../utils/constants';
+
 import { colors } from '../../utils/theme';
 
 const typographyVariant = {
-  bold: IS_IOS ? 'Raleway Bold' : 'Raleway-Bold',
-  italic: IS_IOS ? 'Raleway Italic' : 'Raleway-Italic',
-  medium: IS_IOS ? 'Raleway Medium' : 'Raleway-Medium',
-  regular: IS_IOS ? 'Raleway Regular' : 'Raleway-Regular',
+  bold: 'Raleway-Bold',
+  italic: 'Raleway-Italic',
+  medium: 'Raleway-Medium',
+  regular: 'Raleway-Regular',
 };
 interface Props {
   align?: 'left' | 'center' | 'right' | 'justify';
   children: ReactNode;
   color?: string;
+  numberOfLines?: number;
   size?: number;
   variant?: keyof typeof typographyVariant;
 }
@@ -32,11 +33,11 @@ const getTextStyle = ({
   return textStyle;
 };
 
-const Typography = ({ align, children, color, size, variant }: Props) => {
+const Typography = ({ align, children, color, numberOfLines, size, variant }: Props) => {
   const textStyle = getTextStyle({ align, color, size, variant });
 
   return (
-    <Text allowFontScaling={false} style={textStyle}>
+    <Text allowFontScaling={false} style={textStyle} numberOfLines={numberOfLines}>
       {children}
     </Text>
   );
