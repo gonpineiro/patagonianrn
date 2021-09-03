@@ -12,9 +12,9 @@ const HistoryScreen = () => {
       <Typography size={20} variant="medium">
         HistoryScreen !!!!
       </Typography>
-      <Separator width={50} />
+      <Separator size={50} />
       <DefaultButton text="Go To Experimental Screen" onPress={() => goToScreen('Experimental')} />
-      <Separator width={50} color={'black'} />
+      <Separator size={50} />
       <DefaultButton text="Log Out" variant="secondary" onPress={resetNavigation} />
     </View>
   );

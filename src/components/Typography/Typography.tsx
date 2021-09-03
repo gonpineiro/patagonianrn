@@ -32,8 +32,9 @@ const getTextStyle = ({
   return textStyle;
 };
 
-const Typography = ({ align, color, children, size, variant }: Props) => {
+const Typography = ({ align, children, color, size, variant }: Props) => {
   const textStyle = getTextStyle({ align, color, size, variant });
+
   return (
     <Text allowFontScaling={false} style={textStyle}>
       {children}

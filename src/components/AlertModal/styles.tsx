@@ -4,7 +4,7 @@ import { colors } from '../../utils/theme';
 const styles = StyleSheet.create({
   mainContainer: {
     alignItems: 'center',
-    backgroundColor: 'rgba(0, 0, 0, 0.2)',
+    backgroundColor: 'rgba(0,0,0,0.2)',
     flex: 1,
     justifyContent: 'center',
     width: '100%',
@@ -18,11 +18,11 @@ const styles = StyleSheet.create({
     paddingTop: 10,
     width: '65%',
   },
-  text: {
-    marginVertical: 20,
-  },
   button: {
     height: 40,
+  },
+  textContainer: {
+    marginVertical: 20,
   },
 });
 

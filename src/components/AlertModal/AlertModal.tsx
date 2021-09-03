@@ -1,56 +1,59 @@
 import React from 'react';
-import { Modal, Text, View } from 'react-native';
+import { Modal, View } from 'react-native';
 
 import DefaultButton from '../DefaultButton';
+import Separator from '../Separator';
+import Typography from '../Typography';
 
 import styles from './styles';
 
 interface Props {
   message: string;
   onPressPrimaryButton: () => void;
-  onPressSecondaryButton?: () => void;
   primaryButtonText: string;
+  onPressSecondaryButton?: () => void;
   secondaryButtonText?: string;
   visible: boolean;
 }
 
-/* Agrear variantes con un diccionario */
-/* Perfeccionar un titulo y una descripcion */
-
 const AlertModal = ({
-  visible,
+  message,
   onPressPrimaryButton,
   onPressSecondaryButton,
-  secondaryButtonText,
-  message,
   primaryButtonText,
-}: Props) => {
-  return (
-    <Modal animationType="fade" transparent visible={visible}>
-      <View style={styles.mainContainer}>
-        <View style={styles.innerAlert}>
-          <Text style={styles.text}>{message}</Text>
-          <DefaultButton
-            additionalStyle={styles.button}
-            onPress={onPressPrimaryButton}
-            text={primaryButtonText}
-          />
-          {secondaryButtonText && onPressSecondaryButton ? (
+  secondaryButtonText,
+  visible,
+}: Props) => (
+  <Modal animationType="fade" transparent visible={visible}>
+    <View style={styles.mainContainer}>
+      <View style={styles.innerAlert}>
+        <View style={styles.textContainer}>
+          <Typography size={18}>{message}</Typography>
+        </View>
+        <DefaultButton
+          additionalStyle={styles.button}
+          onPress={onPressPrimaryButton}
+          text={primaryButtonText}
+        />
+        {secondaryButtonText && onPressSecondaryButton ? (
+          <>
+            <Separator size={10} />
             <DefaultButton
               additionalStyle={styles.button}
               onPress={onPressSecondaryButton}
               text={secondaryButtonText}
               variant="secondary"
             />
-          ) : null}
-        </View>
+          </>
+        ) : null}
       </View>
-    </Modal>
-  );
-};
+    </View>
+  </Modal>
+);
 
 AlertModal.defaultProps = {
   onPressSecondaryButton: null,
   secondaryButtonText: '',
 };
+
 export default AlertModal;

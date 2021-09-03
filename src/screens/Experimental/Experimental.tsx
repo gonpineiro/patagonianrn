@@ -29,14 +29,14 @@ const ExperimentalScreen = () => {
           <Typography align="center" size={25} color={'white'} variant={'medium'}>
             https://academy.patagonian.it/
           </Typography>
-          <Separator width={50} />
+          <Separator size={50} />
           <MaterialIcon name="search" size={50} color="#fff" />
           <Image
             source={{ uri: 'https://reactnative.dev/img/tiny_logo.png' }}
             style={styles.image}
             resizeMode="contain"
           />
-          <Separator width={50} />
+          <Separator size={50} />
           <DefaultButton
             onPress={showModal}
             text={'Show Modal'}

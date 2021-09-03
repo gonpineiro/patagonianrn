@@ -34,7 +34,7 @@ const Header = ({
             <MaterialIcon name="navigate-before" size={35} color={colors.black} />
           </TouchableOpacity>
         ) : (
-          <Separator width={40} />
+          <Separator size={40} />
         )}
         <View style={styles.titleContainer}>
           <Typography variant="bold" size={17}>
@@ -46,7 +46,7 @@ const Header = ({
             <RightSideComponent />
           </TouchableOpacity>
         ) : (
-          <Separator width={40} />
+          <Separator size={40} />
         )}
       </View>
     </>

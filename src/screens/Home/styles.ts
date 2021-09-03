@@ -1,18 +1,25 @@
 import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
+  flatList: {
+    flex: 1,
+    width: '100%',
+  },
   mainContainer: {
     alignItems: 'center',
     flex: 1,
+    width: '100%',
+  },
+  listItemContainer: {
+    height: 30,
     justifyContent: 'center',
-    width: '100%',
+    marginHorizontal: 20,
+    width: '96%',
   },
-  scrollView: {
+  wholeScreenCenter: {
+    alignItems: 'center',
     flex: 1,
-    width: '100%',
-  },
-  flatList: {
-    flex: 1,
+    justifyContent: 'center',
     width: '100%',
   },
 });

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { ActivityIndicator, Alert, FlatList, View } from 'react-native';
 import { useNetInfo } from '@react-native-community/netinfo';
 
-import { DefaultButton, Header, Typography } from '../../components';
+import { DefaultButton, Header, Separator, Typography } from '../../components';
 import styles from './styles';
 
 import { getAllBooks } from '../../services';
@@ -14,12 +14,13 @@ const goToExperimentalScreen = () => {
 };
 
 const ListItem = ({ title }: { title: string }) => (
-  <View style={{ height: 30, justifyContent: 'center', marginHorizontal: 20, width: '96%' }}>
+  <View style={styles.listItemContainer}>
     <Typography>{title}</Typography>
   </View>
 );
 
-const renderFlatList = ({ item }: any) => <ListItem title={item.title} />;
+// @ts-ignore
+const renderFlatlistItem = ({ item }) => <ListItem title={item.title} />;
 
 const HomeScreen = () => {
   const [books, setBooks] = useState([]);
@@ -27,60 +28,61 @@ const HomeScreen = () => {
 
   const netInfo = useNetInfo();
 
-  console.log(netInfo.isConnected?.toString());
-
-  const getBooksData = () => {
+  const getBooksData = async () => {
     setLoading(true);
-    const dis = async () => {
-      try {
-        const { success, data } = await getAllBooks();
-        if (success) {
-          setBooks(data);
-        } else {
-          Alert.alert('Error getting books on Home Screen');
-        }
-      } catch (error) {
-        console.log('Error getting books on Home Screen', error);
+    try {
+      const { success, data } = await getAllBooks();
+      if (success) {
+        setBooks(data);
+      } else {
         Alert.alert('Error getting books on Home Screen');
-      } finally {
-        setLoading(false);
       }
-    };
-    dis();
+    } catch (error) {
+      console.log('Error getting books on Home Screen', error);
+      Alert.alert('Error getting books on Home Screen');
+    } finally {
+      setLoading(false);
+    }
   };
 
   useEffect(() => {
     getBooksData();
   }, []);
 
-  console.log('Inside HomeScreen');
-  if (!netInfo.isConnected?.toString()) {
+  if (!netInfo.isConnected) {
     return (
-      <View style={styles.mainContainer}>
-        <Typography>No tienes internet</Typography>
+      <View style={styles.wholeScreenCenter}>
+        <Typography size={20}>You don't have internet :'(</Typography>
       </View>
+    );
+  }
+
+  if (loading) {
+    return (
+      <>
+        <Header showBackButton={false} title="Home Screen" />
+        <View style={styles.wholeScreenCenter}>
+          <ActivityIndicator size="large" color={colors.mainOrange} />
+        </View>
+      </>
     );
   }
 
   return (
     <>
-      <Header showBackButton={false} title="Home" />
-      {loading ? (
-        <View style={styles.mainContainer}>
-          <ActivityIndicator size="large" color={colors.mainOrange} />
-        </View>
-      ) : (
-        <View style={styles.mainContainer}>
-          <DefaultButton text="Go To Experimental Screen" onPress={goToExperimentalScreen} />
-          <FlatList
-            refreshing={loading}
-            onRefresh={() => getBooksData()}
-            data={books}
-            renderItem={renderFlatList}
-            style={styles.flatList}
-          />
-        </View>
-      )}
+      <Header showBackButton={false} title="Home Screen" />
+      <View style={styles.mainContainer}>
+        <Separator size={20} />
+        <DefaultButton text="Go To Experimental Screen" onPress={goToExperimentalScreen} />
+        <Separator size={20} />
+        <FlatList
+          refreshing={loading}
+          onRefresh={getBooksData}
+          data={books}
+          renderItem={renderFlatlistItem}
+          style={styles.flatList}
+        />
+      </View>
     </>
   );
 };
